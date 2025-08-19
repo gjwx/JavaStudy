@@ -1,0 +1,3 @@
+com/ximalaya/ssd/SSDServiceApplication.class
+com/ximalaya/ssd/service/UserServiceImpl.class
+com/ximalaya/ssd/server/ThriftServer.class
