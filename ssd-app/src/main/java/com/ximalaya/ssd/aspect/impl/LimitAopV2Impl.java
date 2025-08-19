@@ -22,6 +22,7 @@ public class LimitAopV2Impl {
         String name = (String) joinPoint.getArgs()[0];
 
             System.out.println("网页输入的名字是"+name);
+        System.out.println("网页输入的名字是"+name);
         String result= (String) joinPoint.proceed()+"被我改了";
 
         return result;
