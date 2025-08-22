@@ -1,0 +1,51 @@
+# SSD服务配置
+server:
+  port: 8081
+
+# Thrift服务器配置
+thrift:
+  server:
+    port: 9090
+    min-threads: 5
+    max-threads: 20
+
+# 应用信息
+spring:
+  application:
+    name: ssd-service
+  profiles:
+    active: dev
+
+# 日志配置
+logging:
+  level:
+    com.ximalaya.ssd: DEBUG
+    org.apache.thrift: INFO
+    root: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/ssd-service.log
+
+# 数据库配置（暂时注释，使用内存存储）
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/ssd_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+#    username: root
+#    password: password
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.ximalaya.ssd.entity
+
+# 健康检查配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always 

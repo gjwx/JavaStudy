@@ -1,0 +1,22 @@
+# Spring Boot配置
+server:
+  port: 8080
+
+# Thrift客户端配置
+thrift:
+  client:
+    host: localhost
+    port: 9090
+
+# 应用信息
+spring:
+  application:
+    name: ssd-app
+
+# 日志配置
+logging:
+  level:
+    com.ximalaya.ssd: info
+    org.apache.thrift: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
