@@ -11,6 +11,7 @@
         <module name="ssd-service" />
         <module name="thrift-common" />
         <module name="ssd-common" />
+        <module name="purse" />
       </profile>
     </annotationProcessing>
   </component>
