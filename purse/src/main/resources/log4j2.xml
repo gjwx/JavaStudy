@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="LOG_PATH">./logs</Property>
+		<Property name="APP_NAME">purse</Property>
+	</Properties>
+
+	<Appenders>
+		<RollingFile name="FILE"
+				 fileName="${LOG_PATH}/${APP_NAME}.log"
+				 filePattern="${LOG_PATH}/${APP_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%C:%M:%L] [%level] [%t] %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="100 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%C:%M:%L] [%level] [%t] %m%n"/>
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="com.ximalaya.hera" level="warn"/>
+		<Logger name="RocketmqClient" level="warn"/>
+		<Logger name="MYBATIS" level="info"/>
+		<Logger name="io.netty" level="warn"/>
+		<Logger name="springfox" level="warn"/>
+		<Logger name="org.jboss" level="warn"/>
+		<Logger name="java.util.logging.LoggingProxyImpl" level="warn"/>
+		<Logger name="io.lettuce" level="warn"/>
+		<Logger name="com.feilong.net.http" level="warn"/>
+
+		<!-- **************************sql相关****************************************** -->
+		<Logger name="org.mybatis" level="warn"/>
+		<Logger name="org.apache.ibatis" level="warn"/>
+
+		<Logger name="com.alibaba.druid" level="warn"/>
+		<!-- **************************feilong****************************************** -->
+		<Logger name="com.feilong" level="info"/>
+		<Logger name="com.feilong.core.lang.ClassLoaderUtil" level="info"/>
+		<Logger name="com.feilong.core.util.comparator.PropertyComparator" level="info"/>
+		<Logger name="com.feilong.servlet.http.CookieUtil" level="debug"/>
+		<Logger name="com.feilong.servlet.http.RequestUtil" level="info"/>
+
+		<!-- **************************springframework****************************************** -->
+		<Logger name="org.springframework" level="info"/>
+		<Logger name="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" level="info"/>
+		<Logger name="org.springframework.aop.framework.ProxyFactoryBean" level="info"/>
+		<Logger name="org.springframework.aop.framework.JdkDynamicAopProxy" level="info"/>
+		<Logger name="org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider" level="info"/>
+		<Logger name="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" level="info"/>
+		<Logger name="org.springframework.beans.factory.annotation.InjectionMetadata" level="info"/>
+		<Logger name="org.springframework.beans.factory.support.AbstractBeanFactory" level="info"/>
+		<Logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory" level="info"/>
+		<Logger name="org.springframework.beans.factory.support.DefaultSingletonBeanRegistry" level="info"/>
+		<Logger name="org.springframework.beans.factory.xml.BeanDefinitionParserDelegate" level="info"/>
+		<Logger name="org.springframework.beans.factory.xml.PluggableSchemaResolver" level="info"/>
+		<Logger name="org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader" level="info"/>
+		<Logger name="org.springframework.beans.factory.xml.DefaultDocumentLoader" level="info"/>
+		<Logger name="org.springframework.beans.factory.xml.DefaultNamespaceHandlerResolver" level="info"/>
+		<Logger name="org.springframework.jdbc.core.JdbcTemplate" level="info"/>
+		<Logger name="org.springframework.jdbc.datasource.DataSourceUtils" level="info"/>
+		<Logger name="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" level="info"/>
+
+		<!-- ****************************apache***************************************** -->
+		<Logger name="org.apache" level="info"/>
+		<Logger name="org.apache.hadoop" level="warn"/>
+		<Logger name="org.apache.parquet" level="warn"/>
+		<Logger name="org.apache.http" level="info"/>
+		<Logger name="org.apache.rocketmq" level="warn"/>
+		<Logger name="org.apache.rocketmq.logging.Slf4jLoggerFactory$Slf4jLogger" level="warn"/>
+		<Logger name="org.apache.commons.digester.Digester" level="warn"/>
+		<Logger name="org.apache.commons.beanutils" level="debug"/>
+		<Logger name="org.apache.commons.beanutils.ConvertUtils" level="info"/>
+		<Logger name="org.apache.commons.beanutils.ConvertUtilsBean" level="warn"/>
+		<Logger name="org.apache.commons.beanutils.converters" level="warn"/>
+		<Logger name="org.apache.commons.beanutils.converters.AbstractConverter" level="warn"/>
+		<Logger name="org.apache.zookeeper" level="warn"/>
+		<Logger name="org.apache.zookeeper.ClientCnxn" level="info"/>
+		<Logger name="org.apache.zookeeper.client.ZooKeeperSaslClient" level="info"/>
+
+		<Root level="info">
+			<AppenderRef ref="FILE"/>
+			<AppenderRef ref="CONSOLE"/>
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,16 @@
+# Spring Boot配置
+server:
+  port: 8082
+
+# 应用信息
+spring:
+  application:
+    name: purse
+
+# 日志配置
+logging:
+  level:
+    com.ximalaya.ssd: info
+    org.apache.thrift: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
