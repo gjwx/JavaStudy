@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Properties>
+		<Property name="logFilePath" value="/var/log/purse" />
+	</Properties>
+	
+	<Appenders>
+		<RollingFile name="FILE" fileName="${logFilePath}/purse.log"
+			filePattern="${logFilePath}/openapi-album-sync-v2-%i.log.%d{yyyy-MM-dd}">
+			<PatternLayout>
+				<pattern>[%d{yyyy-MM-dd HH:mm:ss SSS}] [%C:%M:%L] [%level] [%t] %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<!-- <SizeBasedTriggeringPolicy size="100M"/> -->
+			</Policies>
+			<DefaultRollOverStrategy max="10" />
+		</RollingFile>
+	</Appenders>
+	
+	
+	<Loggers>
+		<Root level="info" additivity="false">
+			<AppenderRef ref="FILE" />
+		</Root>
+
+
+		<!-- ##[com.ximalaya.hera.client.register.ConsulCommandProcessor:doOnOffPolling:101] [INFO] [register-command-thread-openapi-developer-service:openapi-developer-service-dataSourceV2-notexist@openapi-developer-service-6949cb9899-zgf4x:23642] hera unit config closed for app:openapi-developer-service, biz:openapi-developer-service-dataSourceV2-notexist
+		 -->
+		<logger name="com.ximalaya.hera" level="warn" />
+		
+
+
+		<logger name="org.slf4j" level="info" />
+		<!-- see org.apache.rocketmq.common.constant.LoggerName -->
+		<!-- see https://www.cnblogs.com/devilfeng/p/6869166.html?ivk_sa=1024320u -->
+		<logger name="RocketmqClient" level="warn" />
+
+		<!--see org.apache.ibatis.logging.LogFactory -->
+		<logger name="MYBATIS" level="info" />
+
+		<logger name="io.netty" level="warn" />
+		<logger name="springfox" level="warn" />
+		<logger name="org.jboss" level="warn" />
+		<logger name="java.util.logging.LoggingProxyImpl" level="warn" />
+		<logger name="io.lettuce" level="warn" />
+		<logger name="com.feilong.net.http" level="warn" />
+
+		<!-- **************************sql相关****************************************** -->
+		<logger name="org.mybatis" level="warn" />
+		<logger name="org.apache.ibatis" level="warn" />
+
+		<logger name="com.alibaba.druid" level="warn" />
+		<!-- **************************feilong****************************************** -->
+		<logger name="com.feilong" level="info" />
+		<logger name="com.feilong.core.lang.ClassLoaderUtil" level="info" />
+		<logger name="com.feilong.core.util.comparator.PropertyComparator" level="info" />
+		<logger name="com.feilong.servlet.http.CookieUtil" level="debug" />
+		<logger name="com.feilong.servlet.http.RequestUtil" level="info" />
+
+		<!-- **************************springframework****************************************** -->
+		<logger name="org.springframework" level="info" />
+
+		<!-- Creating implicit proxy for bean 'memberDao' with 0 common interceptors and 1 specific interceptors -->
+		<logger name="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" level="info" />
+		<logger name="org.springframework.aop.framework.ProxyFactoryBean" level="info" />
+
+		<logger name="org.springframework.aop.framework.JdkDynamicAopProxy" level="info" />
+
+		<logger name="org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider" level="info" />
+
+		<logger name="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" level="info" />
+		<logger name="org.springframework.beans.factory.annotation.InjectionMetadata" level="info" />
+		<logger name="org.springframework.beans.factory.support.AbstractBeanFactory" level="info" />
+		<logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory" level="info" />
+		<logger name="org.springframework.beans.factory.support.DefaultSingletonBeanRegistry" level="info" />
+
+		<logger name="org.springframework.beans.factory.xml.BeanDefinitionParserDelegate" level="info" />
+		<logger name="org.springframework.beans.factory.xml.PluggableSchemaResolver" level="info" />
+		<logger name="org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader" level="info" />
+		<logger name="org.springframework.beans.factory.xml.DefaultDocumentLoader" level="info" />
+		<logger name="org.springframework.beans.factory.xml.DefaultNamespaceHandlerResolver" level="info" />
+
+		<logger name="org.springframework.jdbc.core.JdbcTemplate" level="info" />
+		<!-- read-only -->
+		<logger name="org.springframework.jdbc.datasource.DataSourceUtils" level="info" />
+
+		<logger name="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" level="info" />
+
+		<!-- ****************************apache***************************************** -->
+		<logger name="org.apache" level="info" />
+		<logger name="org.apache.hadoop" level="warn" />
+		<logger name="org.apache.parquet" level="warn" />
+		
+		<logger name="org.apache.http" level="info" />
+		<logger name="org.apache.rocketmq" level="warn" />
+		<logger name="org.apache.rocketmq.logging.Slf4jLoggerFactory$Slf4jLogger" level="warn" />
+
+		<logger name="org.apache.commons.digester.Digester" level="warn" />
+		<logger name="org.apache.commons.beanutils" level="DEBUG" />
+		<logger name="org.apache.commons.beanutils.ConvertUtils" level="info" />
+		<logger name="org.apache.commons.beanutils.ConvertUtilsBean" level="warn" />
+		<logger name="org.apache.commons.beanutils.converters" level="warn" />
+		<logger name="org.apache.commons.beanutils.converters.AbstractConverter" level="warn" />
+
+		<logger name="org.apache.zookeeper" level="warn" />
+		<logger name="org.apache.zookeeper.ClientCnxn" level="info" />
+		<logger name="org.apache.zookeeper.client.ZooKeeperSaslClient" level="info" />
+
+		
+	</Loggers>
+</Configuration>
