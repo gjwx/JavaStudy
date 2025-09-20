@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/purchase/project")
-@ApiDoc
 public class PurchaseProjectCommandController {
 
     @Autowired

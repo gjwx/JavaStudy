@@ -5,6 +5,7 @@ import com.ximalaya.mainstay.rpc.thrift.TException;
 import com.ximalaya.omp.distributor.api.model.PurchaseProjectInfoPage;
 import com.ximalaya.omp.distributor.api.model.SupplementBusinessOrderPage;
 import com.ximalaya.openapi.admin.converter.purchase.PurchaseProjectMapper;
+import com.ximalaya.openapi.admin.exception.TException;
 import com.ximalaya.openapi.admin.model.purchase.*;
 import com.ximalaya.openapi.admin.service.purchase.PurchaseProjectQueryService;
 import com.ximalaya.openapi.admin.vo.PageResult;
@@ -48,6 +49,8 @@ public class PurchaseProjectQueryController {
                                                                           @RequestParam(required = false) Integer fulfillmentType,
                                                                           @RequestParam(defaultValue = "1") Integer currentPage,
                                                                           @RequestParam(defaultValue = "10") Integer pageSize) throws TException {
+
+
         PurchaseProjectInfoPage purchaseProjectInfoPage = projectService.queryPurchaseProject(projectName, appKey, purchaseType, projectId, projectStatus, fulfillmentType, currentPage, pageSize);
         PurchaseProjectMapper mapper = Mappers.getMapper(PurchaseProjectMapper.class);
         PageResult<PurchaseProjectInfo> result = mapper.convert(purchaseProjectInfoPage);

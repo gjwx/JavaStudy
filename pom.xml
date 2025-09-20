@@ -13,6 +13,8 @@
         <module>ssd-service</module>
         <module>ssd-app</module>
         <module>ssd-common</module>
+        <module>core-signature</module>
+        <module>core-commons</module>
     </modules>
 
     <properties>

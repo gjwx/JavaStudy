@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.ximalaya.openplatform.signature.SignatureImpl,\
+  com.ximalaya.openplatform.signature.SignatureImplV2,\
+  com.ximalaya.openplatform.signature.service.AppServiceClient,\
+  com.ximalaya.openplatform.signature.service.AutoBeanLoadConfig,\
+  com.ximalaya.openplatform.signature.service.FootballStressTestingConfig

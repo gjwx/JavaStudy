@@ -19,6 +19,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
+        <feilong.version>4.3.1</feilong.version>
     </properties>
 
     <dependencies>
@@ -34,7 +35,11 @@
             </exclusions>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.ximalaya.openapi</groupId>
+            <artifactId>openapi-log</artifactId>
+            <version>2.1.001</version>
+        </dependency>
 
             <dependency>
                 <groupId>org.mapstruct</groupId>
@@ -46,6 +51,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version> <!-- 请检查最新版本 -->
+        </dependency>
+
+<!--        是用于引入阿里巴巴的 Fastjson 库中的 JSON 类。-->
+<!--        Fastjson 是一个用于在 Java 中进行 JSON 数据处理的库，-->
+<!--        提供了将 Java 对象转换为 JSON 字符串和将 JSON 字符串解析为 Java 对象的功能。-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.83</version> <!-- 请检查并使用最新版本 -->
+        </dependency>
+
+
 
         <!-- Lombok -->
         <dependency>
@@ -62,14 +84,40 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <!-- 请确保直接或间接依赖的commons-io版本在2.5及以上 -->
+            <version>2.5</version>
+        </dependency>
 
-
-
+        <dependency>
+            <groupId>com.github.ifeilong</groupId>
+            <artifactId>feilong</artifactId>
+            <version>${feilong.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>31.0.1-jre</version> <!-- 请根据需要选择版本 -->
+        </dependency>
+        <dependency>
+            <groupId>com.ximalaya</groupId>
+            <artifactId>core-signature</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ximalaya</groupId>
+            <artifactId>core-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ximalaya</groupId>
+            <artifactId>core-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
