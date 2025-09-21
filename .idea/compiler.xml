@@ -7,9 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ssd-app" />
+        <module name="core-commons" />
         <module name="ssd-service" />
+        <module name="ssd-app" />
         <module name="thrift-common" />
+        <module name="core-signature" />
         <module name="ssd-common" />
         <module name="purse" />
       </profile>
