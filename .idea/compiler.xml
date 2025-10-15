@@ -9,10 +9,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="core-commons" />
         <module name="ssd-service" />
+        <module name="openapi-admin" />
         <module name="ssd-app" />
         <module name="thrift-common" />
         <module name="core-signature" />
         <module name="ssd-common" />
+        <module name="log-common" />
         <module name="purse" />
       </profile>
     </annotationProcessing>
