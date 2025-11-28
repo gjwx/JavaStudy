@@ -11,6 +11,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @author gongjiawei
  * @date 2025/7/10 下午2:00
  */
+///测试git是否正确使用
+//123456
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration .class})
 public class SSDApplication {
     public static void main(String[] args) {
